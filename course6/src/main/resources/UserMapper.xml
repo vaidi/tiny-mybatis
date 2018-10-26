@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mapper namespace="cn.leegq.course6.UserMapper">
+    <resultMap id="userMap" type="cn.leegq.course.domain.User">
+        <!--<id property="id" column="id"/>-->
+        <result property="uid" column="uid" javaType="java.lang.Integer"/>
+        <result property="age" column="age" javaType="java.lang.Integer"/>
+        <result property="name" column="name" javaType="java.lang.String"/>
+    </resultMap>
+
+    <select id="listUsers" resultMap="userMap">
+        select * from user where age > ?
+    </select>
+</mapper>
